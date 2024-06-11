@@ -44,7 +44,9 @@ namespace ListApplication
 
             // Calculate the total and show it
             double total = MainProgram.CalculateTotal(currentCustomer);
-            totalTextBox.Text = $"{total} €";
+            double totalUsd = MainProgram.FromEURToUSD(total);
+            totalTextBox.Text = $"{Math.Round(total, 2)} €";
+            totalUsdTextBox.Text = $"{Math.Round(totalUsd, 2)} $";
         }
 
         private void CustomerDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)

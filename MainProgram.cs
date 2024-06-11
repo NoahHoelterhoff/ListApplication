@@ -23,5 +23,10 @@ namespace ListApplication
         {
             return 0;
         }
+
+        public static double FromEURToUSD(double eur)
+        {
+            return eur;
+        }
     }
 }

@@ -37,6 +37,7 @@ namespace ListApplication
             totalLayout = new TableLayoutPanel();
             totalTextBox = new TextBox();
             totalLabel = new Label();
+            totalUsdTextBox = new TextBox();
             customerBtnLayout = new TableLayoutPanel();
             addCustomerBtn = new Button();
             removeCustomerBtn = new Button();
@@ -102,14 +103,16 @@ namespace ListApplication
             // 
             totalLayout.AutoSize = true;
             totalLayout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            totalLayout.ColumnCount = 4;
+            totalLayout.ColumnCount = 5;
             mainLayout.SetColumnSpan(totalLayout, 2);
             totalLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             totalLayout.ColumnStyles.Add(new ColumnStyle());
-            totalLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            totalLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            totalLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             totalLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             totalLayout.Controls.Add(totalTextBox, 2, 0);
             totalLayout.Controls.Add(totalLabel, 1, 0);
+            totalLayout.Controls.Add(totalUsdTextBox, 3, 0);
             totalLayout.Dock = DockStyle.Fill;
             totalLayout.Location = new Point(3, 329);
             totalLayout.Name = "totalLayout";
@@ -124,8 +127,9 @@ namespace ListApplication
             totalTextBox.Location = new Point(302, 3);
             totalTextBox.Name = "totalTextBox";
             totalTextBox.ReadOnly = true;
-            totalTextBox.Size = new Size(343, 23);
+            totalTextBox.Size = new Size(168, 23);
             totalTextBox.TabIndex = 0;
+            totalTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // totalLabel
             // 
@@ -137,6 +141,16 @@ namespace ListApplication
             totalLabel.TabIndex = 1;
             totalLabel.Text = "Total";
             totalLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // totalUsdTextBox
+            // 
+            totalUsdTextBox.Dock = DockStyle.Fill;
+            totalUsdTextBox.Location = new Point(476, 3);
+            totalUsdTextBox.Name = "totalUsdTextBox";
+            totalUsdTextBox.ReadOnly = true;
+            totalUsdTextBox.Size = new Size(168, 23);
+            totalUsdTextBox.TabIndex = 2;
+            totalUsdTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // customerBtnLayout
             // 
@@ -279,5 +293,6 @@ namespace ListApplication
         private ComboBox productComboBox;
         private TextBox nameInput;
         private ComboBox membershipComboBox;
+        private TextBox totalUsdTextBox;
     }
 }

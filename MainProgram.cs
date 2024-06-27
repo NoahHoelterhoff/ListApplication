@@ -21,6 +21,34 @@ namespace ListApplication
 
         public static double CalculateTotal(Customer customer)
         {
+            try
+            {
+                double total = 0;
+                for (int i = 0; i < customer.Basket.Count; i++)
+                {
+
+                    if (customer.Basket[i].Quantity > 5)
+                    {
+                        total += customer.Basket[i].Product.Price * customer.Basket[i].Quantity * .9;
+                    }
+                    else
+                    {
+                        total += customer.Basket[i].Product.Price * customer.Basket[i].Quantity;
+                    }
+
+
+                }
+                
+                return total;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+
+            }
             return 0;
         }
 
